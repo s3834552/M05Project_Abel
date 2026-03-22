@@ -1,0 +1,11 @@
+PROC ARIMA Data=Past; 
+identify var=Cl(1); 
+estimate p=1; 
+forecast lead=5 interval=semiyear out=Cl1; 
+identify var=Cl; 
+estimate p=2; 
+forecast lead=5 interval=semiyear out=Cl2; 
+identify var=Cl; 
+estimate q=1; 
+forecast lead=5 interval=semiyear out=Cl3; 
+RUN; 
